@@ -1,79 +1,57 @@
-/* Global */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-  line-height: 1.7;
-  color: #333;
-  background: #f9fbfd;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #2e2e2e;
+  background: #f8fafc;
+  line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-/* Hero */
-.hero {
-  background: linear-gradient(135deg, #0077b6, #00b4d8, #90e0ef);
+/* Header */
+.header {
+  background: linear-gradient(120deg, #14213d, #1d3557, #457b9d);
   color: #fff;
+  padding: 80px 20px;
   text-align: center;
-  padding: 100px 20px;
-  animation: fadeInHero 1.5s ease-in-out;
+  animation: fadeIn 1.5s ease;
 }
-
-.hero h1 {
-  font-size: 3.2rem;
-  margin-bottom: 15px;
-  animation: slideInDown 1s ease-in-out;
+.header .name {
+  font-size: 3rem;
+  font-weight: 700;
 }
-
-.hero p {
-  font-size: 1.3rem;
-  font-weight: 300;
-  margin-bottom: 25px;
-}
-
-.btn {
-  display: inline-block;
-  background: #ffb703;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-.btn:hover {
-  background: #fb8500;
-  transform: scale(1.05);
+.header .tagline {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0.9;
 }
 
 /* Navbar */
 .navbar {
+  background: #1d3557;
+  padding: 10px 0;
+  text-align: center;
   position: sticky;
   top: 0;
-  background: #023e8a;
-  text-align: center;
   z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
 .navbar ul {
   list-style: none;
-  padding: 1rem;
 }
-
 .navbar li {
   display: inline-block;
-  margin: 0 20px;
+  margin: 0 15px;
 }
-
 .navbar a {
-  color: #fff;
+  color: #f1faee;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 .navbar a:hover {
   color: #ffb703;
@@ -85,91 +63,83 @@ body {
   padding: 70px 20px;
   text-align: center;
 }
-
 .section.alt {
-  background: #e9f5ff;
+  background: #f1f9ff;
 }
-
 .section h2 {
-  font-size: 2.3rem;
+  font-size: 2rem;
   margin-bottom: 25px;
-  color: #0077b6;
-  text-transform: uppercase;
+  color: #1d3557;
 }
 
-/* Projects */
+/* Project Cards */
 .project-card {
   background: #fff;
-  max-width: 800px;
+  max-width: 900px;
   margin: 20px auto;
   padding: 25px;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: left;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeUp 1s ease;
 }
 .project-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 .project-card h3 {
-  color: #023e8a;
-  margin-bottom: 12px;
+  color: #14213d;
+  margin-bottom: 10px;
 }
 
 /* Skills */
-.skills-list {
-  list-style: none;
-  display: inline-block;
-  text-align: left;
-  font-size: 1.1rem;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
-.skills-list li {
-  margin: 12px 0;
-  padding-left: 25px;
-  position: relative;
+.skill-category {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
 }
-.skills-list li::before {
-  content: "✔";
-  color: #0077b6;
-  position: absolute;
-  left: 0;
-  font-weight: bold;
+.skill-category:hover {
+  transform: scale(1.05);
+}
+.skill-category h4 {
+  color: #457b9d;
+  margin-bottom: 10px;
 }
 
 /* Contact */
 #contact a {
-  color: #0077b6;
+  color: #1d3557;
   text-decoration: none;
   font-weight: 600;
 }
 #contact a:hover {
   text-decoration: underline;
-  color: #fb8500;
+  color: #ffb703;
 }
 
 /* Footer */
 footer {
-  background: #023e8a;
+  background: #14213d;
   color: #fff;
-  padding: 20px;
   text-align: center;
+  padding: 20px;
+  margin-top: 30px;
 }
 
 /* Animations */
-@keyframes fadeInHero {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
-@keyframes slideInDown {
-  from { transform: translateY(-40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-.fade-in {
-  opacity: 0;
-  animation: fadeInUp 1s ease forwards;
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
 }
